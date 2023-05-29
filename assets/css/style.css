@@ -9,6 +9,7 @@
 }
 :root {
   --back: #000000;
+  --bg-black: rgba(7, 6, 6, 0.8);
   --white: #ffffff;
   --mist: #90afc5;
   --stone: #336b87;
@@ -97,6 +98,9 @@ header {
   }
   #toggle-menu:checked ~ .navbarlist {
     display: flex;
+  }
+  .contact-img {
+    display: none;
   }
 }
 .ocultar {
@@ -352,5 +356,67 @@ main {
   border: 1px solid var(--stone);
   /* background: linear-gradient(to top, var(--mist), var(--white)); */
   background: transparent;
-  color: var(--shadow);
+  /* color: var(--white); */
+}
+
+/* <!-- contact --> */
+
+#contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  background-image: url(/assets/imagenes/pexels-cottonbro-studio-5082579.jpg);
+  font-family: "Kdam Thmor Pro", sans-serif;
+  width: 100%;
+  padding: 30px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  height: 400px;
+  max-width: 1500px;
+  background: var(--bg-black);
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: 0 25px 25px var(--bg-black);
+}
+.contact-container-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.contact-container-txt-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  width: 80%;
+}
+.textarea {
+  width: 100%;
+}
+
+/*  <!-- footer --> */
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px 10px;
+  background: var(--back);
+  color: var(--white);
+}
+.footer-info img {
+  height: 50%;
 }
