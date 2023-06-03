@@ -278,7 +278,9 @@ main {
   color: var(--back);
   border: 1px solid var(--back);
 }
-
+.Active-btn-categories {
+  background: var(--stone);
+}
 /*  <!-- products-container --> */
 .products-container {
   display: flex;
