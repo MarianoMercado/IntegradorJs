@@ -16,7 +16,7 @@
   --shadow: #2a3132;
   --autumn-foliage: #763626;
 }
-header {
+.header {
   height: 80px;
   position: fixed;
   top: 0;
@@ -51,11 +51,9 @@ header {
 .navbar-link {
   text-decoration: none;
   color: var(--shadow);
-
   position: relative;
   font-size: 1em;
   font-weight: 500;
-
   cursor: pointer;
   line-height: 30px;
 }
@@ -152,7 +150,7 @@ main {
   display: flex;
   gap: 20px;
 }
-.hero-btns button {
+.hero-btns a {
   padding: 1rem;
   border-radius: 0.5rem;
   border: none;
@@ -160,12 +158,14 @@ main {
   color: var(--white);
   font-weight: 900;
   font-size: 20px;
+  text-decoration: none;
 }
-.hero-btns button:hover {
+.hero-btns a:hover {
   background: transparent;
   border: 1px solid var(--shadow);
   color: var(--shadow);
 }
+
 /* <!-- About --> */
 
 #about {
@@ -281,6 +281,7 @@ main {
 .Active-btn-categories {
   background: var(--stone);
 }
+
 /*  <!-- products-container --> */
 .products-container {
   display: flex;
@@ -421,4 +422,126 @@ main {
 }
 .footer-info img {
   height: 50%;
+}
+
+/***************************************** page login */
+.headerLogin {
+  height: 80px;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 50px;
+  color: var(--shadow);
+  background: transparent;
+  position: fixed;
+  width: 100%;
+  z-index: 99;
+}
+
+#SectionLogin {
+  background-image: url(/assets/imagenes/carretera.jpg);
+  /* filter: brightness(50%); */
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Domine", serif;
+  gap: 10px;
+}
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+  width: 400px;
+  height: 400px;
+  max-width: 1500px;
+  background: var(--bg-black);
+  padding: 10px 30px;
+  border-radius: 10px;
+  box-shadow: 0 25px 25px var(--bg-black);
+  color: var(--white);
+}
+.contact-container-inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+.login {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  font-family: "Cinzel", serif;
+  gap: 30px;
+  height: 100%;
+}
+.login-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+}
+.login-header img {
+  height: 100px;
+}
+.login-body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.login-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.login-footer a {
+  list-style: none;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 16px;
+  padding: 5px;
+  font-weight: 900;
+}
+.login-footer a:hover {
+  border-color: 1px solid var(--sky-blue);
+  background-color: var(--white);
+  border-radius: 5px;
+  color: var(--bg-black);
+  box-shadow: var(--gray) 0 0 5px;
+}
+
+.login-dni,
+.login-passw {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+.login-dni input,
+.login-passw input {
+  padding: 5px;
+  border: 2px solid var(--sky-blue);
+  background: rgb(0, 0, 0, 0);
+  outline: none;
+  border-radius: 5px;
+  font-size: 14px;
+  transition: 0.3s;
+  color: var(--gray);
 }

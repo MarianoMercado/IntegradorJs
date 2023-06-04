@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="headerLogin">
+      <a href="/index.html">
+        <img
+          src="/assets/imagenes/LogoAtuos-white.png"
+          class="logo"
+          alt="logo"
+        />
+      </a>
+      <nav class="navbar">
+        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="toggle-menu" />
+
+        <ul class="navbarlist">
+          <li>
+            <a href="/index.html " class="navbar-link">Inicio</a>
+          </li>
+          <li><a href="#about" class="navbar-link">Registrate</a></li>
+        </ul>
+      </nav>
+    </header>
+    <!-- main -->
+    <main>
+      <section id="SectionLogin">
+        <div class="loginContainer">
+          <div class="login">
+            <div class="login-header">
+              <img
+                src="/assets/imagenes/LogoAtuos-white.png"
+                class="logo"
+                alt="logo"
+              />
+            </div>
+
+            <div class="login-body">
+              <form>
+                <div class="login-dni">
+                  <i class="fa-solid fa-user"></i>
+                  <label for="dni">Usuario </label>
+                  <input type="tex" id="dni" placeholder="Usuario" />
+                </div>
+                <div class="login-passw">
+                  <i class="fa-sharp fa-solid fa-user-lock"></i>
+                  <label for="password">Contraseña</label>
+                  <input
+                    type="password"
+                    id="password"
+                    placeholder="Contraseña"
+                  />
+                </div>
+              </form>
+            </div>
+            <div class="login-footer">
+              <a href="#">Ingresar</a>
+              <a href="./Contact.html">No tienes Cuenta?</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
