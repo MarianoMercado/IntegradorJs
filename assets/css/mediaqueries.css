@@ -1,0 +1,25 @@
+@media (max-width: 700px) {
+  header {
+    padding: 15px;
+  }
+  .navbar ul {
+    width: 100%;
+    height: calc(100vh - 80px);
+    position: absolute;
+    top: 80px;
+    left: 0;
+    flex-direction: column;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  .toggle-menu {
+    display: flex;
+  }
+  #toggle-menu:checked ~ .navbarlist {
+    display: flex;
+  }
+  .contact-img {
+    display: none;
+  }
+}

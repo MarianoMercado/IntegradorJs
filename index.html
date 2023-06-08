@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <!-- animaciones -->
     <link rel="stylesheet" href="assets/css/animaciones.css" />
+    <!-- mediaqueries -->
+    <link rel="stylesheet" href="assets/css/mediaqueries.css" />
     <!-- icon -->
     <link
       rel="stylesheet"
@@ -26,7 +28,9 @@
         alt="logo"
       />
       <nav class="navbar">
-        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+        <label for="toggle-menu" class="toggle-menu"
+          ><i class="fa-solid fa-bars"></i
+        ></label>
         <input type="checkbox" id="toggle-menu" />
 
         <ul class="navbarlist">
@@ -38,6 +42,57 @@
             </a>
           </li>
         </ul>
+
+        <!-- carrito -->
+        <div class="cart-label">
+          <i class="fa-solid fa-cart-shopping cart-icon">
+            <div class="cart-bubble">0</div>
+          </i>
+        </div>
+
+        <!-- menu del carrito -->
+        <div class="cart-shopping">
+          <div class="cart-header">
+            <h2>Mis Autos</h2>
+          </div>
+
+          <!-- cart-shopping-container -->
+
+          <div class="cart-shopping-container">
+            <!-- items -->
+            <!-- <div class="cart-shopping-item">
+              <div class="cart-shopping-detail">
+                <img
+                  src="./assets/imagenes/audi.jpg"
+                  alt="Asado - Carniceria - San Juan"
+                />
+                <div class="cart-shopping-precio">
+                  <span>Cruze</span>
+                  <p>$1000000</p>
+                </div>
+              </div>
+
+              <div class="cart-shopping-detail">
+                <div class="cart-shopping-control">
+                  <span class="cart-control down">-</span>
+                  <span class="cart-control">1</span>
+                  <span class="cart-control up">+</span>
+                </div>
+              </div>-->
+          </div>
+
+          <div class="cart-footer">
+            <div class="cart-footer-detail">
+              <h3>Total</h3>
+              <span>$3500</span>
+            </div>
+
+            <button class="cart-footer-add">Comprar</button>
+          </div>
+        </div>
+
+        <!-- efecto overlay -->
+        <div class="overlay"></div>
       </nav>
     </header>
 
@@ -113,7 +168,7 @@
                 <p>$1000000</p>
               </div>
               <div class="card-products-carrito">
-                <button>Agregar</button>
+                <button class="card-products-agregar">Agregar</button>
                 <i class="fa-solid fa-cart-shopping cart-icon"></i>
               </div>
             </div>
