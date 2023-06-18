@@ -15,6 +15,9 @@
   --stone: #336b87;
   --shadow: #2a3132;
   --autumn-foliage: #763626;
+  --msj-succes: rgba(10, 248, 10, 0.8);
+  --msj-warning: rgba(233, 207, 10, 0.8);
+  --msj-error: rgba(237, 9, 9, 0.8);
 }
 .header {
   height: 80px;
@@ -124,7 +127,7 @@
   color: var(--white);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  text-align: center;
   text-align: center;
   gap: 20px;
   height: calc(100vh - 80px);
@@ -139,6 +142,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   width: 100%;
   gap: 20px;
   border-bottom: 2px solid var(--autumn-foliage);
@@ -161,7 +165,7 @@
   background: linear-gradient(to top, var(--stone), var(--mist));
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   gap: 10px;
   max-height: 200px;
@@ -229,7 +233,13 @@
   border-top: 2px solid var(--autumn-foliage);
   padding-top: 5px;
 }
-.cart-footer-add {
+.cart-footer-btn {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.cart-footer-add,
+.cart-footer-eliminar {
   background: var(--mist);
   border: none;
   padding: 10px 35px;
@@ -239,8 +249,15 @@
   font-size: 16px;
   font-weight: 800;
 }
+
 .cart-footer-add:hover {
-  background-color: var(--autumn-foliage);
+  background-color: var(--msj-succes);
+  color: white;
+  box-shadow: var(--white) 0 0 15px;
+}
+.cart-footer-eliminar:hover {
+  background-color: var(--msj-error);
+  color: white;
   box-shadow: var(--white) 0 0 15px;
 }
 
@@ -712,4 +729,52 @@ main {
 }
 .hidden {
   display: none;
+}
+/*modal*/
+.add-modal {
+  padding: 15px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-white);
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  margin-bottom: 20px;
+  width: 300px;
+  height: 100px;
+  transition: all 0.5s ease-out;
+  border-radius: 20px 10px;
+  transform: translateY(200%);
+}
+.error {
+  background-color: var(--msj-error);
+}
+.success {
+  background-color: var(--msj-succes);
+}
+.modale-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+.modale-body {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+  padding: 0 15px;
+  color: var(--white);
+}
+.active-modal {
+  transform: translateY(0);
+  transition: all 0.5s ease-in;
 }

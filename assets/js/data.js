@@ -2,7 +2,7 @@ const productsData = [
   {
     id: 1,
     name: "Cruze",
-    Precio: 10000,
+    Precio: 1000,
     Color: "Blanco",
     Marca: "Chevrolet",
     cardImg: "/assets/imagenes/chevrolet.jpg",
@@ -10,7 +10,7 @@ const productsData = [
   {
     id: 2,
     name: "Onix",
-    Precio: 20000,
+    Precio: 2000,
     Color: "Gris",
     Marca: "Chevrolet",
     cardImg: "/assets/imagenes/chevrolet.jpg",
@@ -18,7 +18,7 @@ const productsData = [
   {
     id: 3,
     name: "Agile",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Plateado",
     Marca: "Chevrolet",
     cardImg: "/assets/imagenes/chevrolet.jpg",
@@ -26,7 +26,7 @@ const productsData = [
   {
     id: 4,
     name: "Camaro",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Rojo",
     Marca: "Chevrolet",
     cardImg: "/assets/imagenes/chevrolet.jpg",
@@ -34,7 +34,7 @@ const productsData = [
   {
     id: 5,
     name: "Focus",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Morado",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -42,7 +42,7 @@ const productsData = [
   {
     id: 6,
     name: "Falcon",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Azul",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -50,7 +50,7 @@ const productsData = [
   {
     id: 7,
     name: "Fiesta",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Rojo",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -58,7 +58,7 @@ const productsData = [
   {
     id: 8,
     name: "Mustang",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Gris",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -66,7 +66,7 @@ const productsData = [
   {
     id: 9,
     name: "Ranger",
-    Precio: 30000,
+    Precio: 5000,
     Color: "Negro",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -74,7 +74,7 @@ const productsData = [
   {
     id: 10,
     name: "F-150",
-    Precio: 30000,
+    Precio: 3000,
     Color: "Blanco",
     Marca: "Ford",
     cardImg: "/assets/imagenes/ford 2.jpg",
@@ -82,7 +82,7 @@ const productsData = [
   {
     id: 11,
     name: "TT",
-    Precio: 1000000,
+    Precio: 90000,
     Color: "Plateado",
     Marca: "Audi",
     cardImg: "/assets/imagenes/audi.jpg",
@@ -90,7 +90,7 @@ const productsData = [
   {
     id: 12,
     name: "A1",
-    Precio: 1000000,
+    Precio: 1000,
     Color: "Negro",
     Marca: "Audi",
     cardImg: "/assets/imagenes/audi.jpg",
@@ -98,7 +98,7 @@ const productsData = [
   {
     id: 13,
     name: "A2",
-    Precio: 1000000,
+    Precio: 8000,
     Color: "Blanco",
     Marca: "Audi",
     cardImg: "/assets/imagenes/audi.jpg",
@@ -106,7 +106,7 @@ const productsData = [
   {
     id: 14,
     name: "A3",
-    Precio: 1000000,
+    Precio: 7000,
     Color: "Azul",
     Marca: "Audi",
     cardImg: "/assets/imagenes/audi.jpg",
@@ -114,7 +114,7 @@ const productsData = [
   {
     id: 15,
     name: "A4",
-    Precio: 1000000,
+    Precio: 6000,
     Color: "Plateado",
     Marca: "Audi",
     cardImg: "/assets/imagenes/audi.jpg",

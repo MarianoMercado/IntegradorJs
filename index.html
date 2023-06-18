@@ -18,6 +18,8 @@
     />
     <!-- login -->
     <link rel="stylesheet" href="/assets/pages/login.html" />
+    <!-- css aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   </head>
   <body>
     <!-- header -->
@@ -60,34 +62,16 @@
 
           <div class="cart-shopping-container">
             <!-- items -->
-            <!-- <div class="cart-shopping-item"> -->
-            <div class="cart-shopping-detail">
-              <img
-                src="./assets/imagenes/audi.jpg"
-                alt="Asado - Carniceria - San Juan"
-              />
-              <div class="cart-shopping-precio">
-                <span>Cruze</span>
-                <p>$1000000</p>
-              </div>
-            </div>
-
-            <div class="cart-shopping-detail">
-              <div class="cart-shopping-control">
-                <span class="cart-control down">-</span>
-                <span class="cart-control">1</span>
-                <span class="cart-control up">+</span>
-              </div>
-            </div>
           </div>
-
           <div class="cart-footer">
             <div class="cart-footer-detail">
               <h3>Total</h3>
-              <span class="cart-footer-total">U$D 0</span>
+              <span class="cart-footer-total"></span>
             </div>
-
-            <button class="cart-footer-add">Comprar</button>
+            <div class="cart-footer-btn">
+              <button class="cart-footer-add">Confirmar compra</button>
+              <button class="cart-footer-eliminar">Vaciar Carrito</button>
+            </div>
           </div>
         </div>
 
@@ -112,21 +96,21 @@
       <!-- About -->
 
       <section id="about">
-        <h3>¿Por qué Comprar en Ramen Autos?</h3>
+        <h3 data-aos="zoom-out-right">¿Por qué Comprar en Ramen Autos?</h3>
         <article class="about-card-container">
-          <div class="about-card">
+          <div data-aos="flip-left" class="about-card">
             <img src="./assets/imagenes/about-card-maps.jpg" alt="" />
             <h4>La mejor Financiación</h4>
             <p>Tenemos un plan que se adapta a tus necesidades</p>
           </div>
 
-          <div class="about-card">
+          <div data-aos="flip-right" class="about-card">
             <img src="./assets/imagenes/about-card-interior.jpg" alt="" />
             <h4>Contamos con un alto Stock</h4>
             <p>Más de 3.000 coches.</p>
           </div>
 
-          <div class="about-card">
+          <div data-aos="flip-up" class="about-card">
             <img src="./assets/imagenes/about-card-frente.jpg" alt="" />
             <h4>Calidad 100% Garantizada</h4>
             <p>Sabemos que cada detalle importa</p>
@@ -139,14 +123,42 @@
       <section id="products">
         <!-- btn -->
         <div class="btn-products">
-          <span>El auto de tus sueños a un sólo clik!</span>
+          <span data-aos="zoom-out-left"
+            >El auto de tus sueños a un sólo clik!</span
+          >
           <div class="btn-categories">
-            <button class="btn-Todos" data-categoryMarca="Todos">Todos</button>
-            <button class="btn-Ford" data-categoryMarca="Ford">Ford</button>
-            <button class="btn-Chevrolet" data-categoryMarca="Chevrolet">
+            <button
+              data-aos="fade-up"
+              data-aos-duration="0,300"
+              class="btn-Todos"
+              data-categoryMarca="Todos"
+            >
+              Todos
+            </button>
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1000"
+              class="btn-Ford"
+              data-categoryMarca="Ford"
+            >
+              Ford
+            </button>
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              class="btn-Chevrolet"
+              data-categoryMarca="Chevrolet"
+            >
               Chevrolet
             </button>
-            <button class="btn-Audi" data-categoryMarca="Audi">Audi</button>
+            <button
+              data-aos="fade-up"
+              data-aos-duration="1500"
+              class="btn-Audi"
+              data-categoryMarca="Audi"
+            >
+              Audi
+            </button>
           </div>
         </div>
 
@@ -221,7 +233,27 @@
         <span> Pagina creada por Mariano Mercado </span>
       </div>
     </footer>
+
+    <!-- modal -->
+    <div class="add-modal">
+      <div class="modale-header">
+        <i class="fa-solid fa-car-side cart-icon"></i>
+        <h4>Ramen Autos</h4>
+      </div>
+      <div class="modale-body">
+        <p>La acción se completó correctamente</p>
+      </div>
+    </div>
+
+    <!-- scripts -->
     <script src="/assets/js/data.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+      });
+    </script>
   </body>
 </html>
