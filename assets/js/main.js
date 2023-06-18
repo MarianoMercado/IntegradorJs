@@ -6,10 +6,16 @@ const cartShopping = document.querySelector(".cart-shopping");
 const cartShoppingContainer = document.querySelector(
   ".cart-shopping-container"
 );
-const BtnProductsAgregar = document.querySelector(".card-products-agregar");
+const cartBubble = document.querySelector(".cart-bubble");
+// const BtnProductsAgregar = document.querySelector(".card-products-agregar");
+// console.dir(BtnProductsAgregar);
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
+console.log(cart);
 
+const saveCart = () => {
+  localStorage.setItem("cart", JSON.stringify(cart));
+};
 //crear cards products
 const createProductsCards = (product) => {
   const { id, name, Precio, Color, Marca, cardImg } = product;
@@ -29,14 +35,16 @@ const createProductsCards = (product) => {
               </div>
               <div class="card-products-precio">
                 <h4>Precio</h4>
-                <p>$${Precio}</p>
+                <p>U$D ${Precio}</p>
               </div>
               <div class="card-products-carrito">
-                <button data-categoryMarca="${Marca}"
+                <button 
+                class="card-products-agregar" 
+                 data-categoryMarca="${Marca}"
                 data-id="${id}"
                 data-name="${name}" 
-                data-precio="${Precio}"
-                 data-img="${cardImg}">Agregar</button>
+                data-Precio="${Precio}"
+                 data-cardImg="${cardImg}">Agregar</button>
                 <i class="fa-solid fa-cart-shopping cart-icon"></i>
               </div>
             </div>
@@ -90,25 +98,26 @@ btnCategories.forEach((button) => {
 });
 
 const createCartProductTemplate = (cartProduct) => {
-  const { id, name, Precio, Color, Marca, cardImg } = cartProduct;
+  const { id, name, precio, cardimg, cantidad, marca } = cartProduct;
   return `
     <div class="cart-shopping-item">
               <div class="cart-shopping-detail">
                 <img
-                  src="${cardImg}"
+                  src="${cardimg}"
                   alt="${name}"
                 />
                 <div class="cart-shopping-precio">
                   <span>${name}</span>
-                  <p>${Precio}</p>
+                  <p>U$D ${precio}  </p>
                 </div>
               </div>
 
               <div class="cart-shopping-detail">
                 <div class="cart-shopping-control">
-                  <span class="cart-control down">-</span>
-                  <span class="cart-control">1</span>
-                  <span class="cart-control up">+</span>
+                  <span class="cart-control down" data-id=${id}>-</span>
+                  <span class="cart-control">${cantidad}</span>
+                  <span class="cart-control up" data-id=${id}>+</span>
+                  <span class="hidden"> ${marca}</span>
                 </div>
           </div>
     </div>
@@ -120,6 +129,7 @@ const toggleCart = () => {
   cartShopping.classList.toggle("open-cart");
 };
 
+//Renderizar Carrito
 const renderCarrito = () => {
   if (!cart.length) {
     cartShoppingContainer.innerHTML = `<p class="empty-msg">No hay productos en el carrito.</p>`;
@@ -130,14 +140,128 @@ const renderCarrito = () => {
     .join("");
 };
 
-const agregarCarrito = () => {
-  const auto = event.target.dataset.categorymarca;
-  cartShoppingContainer.innerHTML = auto.filter();
+//Validar si existe el auto seleccionado en el carrito
+const existId = (id) => {
+  return cart.find((item) => {
+    return item.id === id;
+  });
+};
+
+const createProductData = (product) => {
+  const { id, name, precio, cardimg, categorymarca } = product;
+  return { id, name, precio, cardimg, categorymarca };
+};
+const createCartProduct = (product) => {
+  cart = [
+    ...cart,
+    {
+      ...product,
+      cantidad: 1,
+    },
+  ];
+};
+
+const agregarCarrito = (e) => {
+  debugger;
+  if (!e.target.classList.contains("card-products-agregar")) {
+    return;
+  }
+  const product = createProductData(e.target.dataset);
+
+  if (existId(product.id)) {
+    alert("El auto seleccionado ya se encuentra en el carrito");
+    return;
+  }
+  createCartProduct(product);
+  updateCartState();
+
+  // console.log(cart);
+};
+
+//aumentar cantidad al carrito
+const addUnitToProduct = (idproduct) => {
+  try {
+    cart = cart.map((idCar) => {
+      if (idCar.id === idproduct) {
+        idCar.cantidad++;
+      }
+      return idCar;
+    });
+  } catch (error) {
+    alert(error);
+  }
+};
+
+//filtrar producto eliminado
+const removeProductFromCart = (existingProduct) => {
+  cart = cart.filter((product) => {
+    return product.id !== existingProduct.id;
+  });
+  updateCartState();
+};
+//eliminar producto del carrito
+const eliminarCartProduct = (idproduct) => {
+  const existingCartProduct = cart.find((item) => item.id === idproduct);
+
+  if (existingCartProduct.cantidad === 1) {
+    debugger;
+    //Eliminar producto
+
+    if (
+      window.confirm(
+        `¿Desea eliminar el auto : "${existingCartProduct.categorymarca} ${existingCartProduct.name}" del carrito?`
+      )
+    ) {
+      removeProductFromCart(existingCartProduct);
+    }
+    return;
+  }
+};
+//reducir cantidad al carrito
+const reduccUnitToProduct = (idproduct) => {
+  try {
+    if (eliminarCartProduct(idproduct) == 0) {
+      return;
+    }
+    cart = cart.map((idCar) => {
+      if (idCar.id === idproduct) {
+        idCar.cantidad--;
+      }
+      return idCar;
+    });
+  } catch (error) {
+    alert(error);
+  }
+};
+
+//cantidades carrito
+const handleQuantity = (e) => {
+  if (e.target.classList.contains("down")) {
+    reduccUnitToProduct(e.target.dataset.id);
+  } else if (e.target.classList.contains("up")) {
+    addUnitToProduct(e.target.dataset.id);
+  }
+
+  updateCartState();
+};
+
+//refrescar todo
+const updateCartState = () => {
+  saveCart();
+  renderCarrito();
+  renderCartBubble();
+};
+
+//burbuja carrito
+const renderCartBubble = () => {
+  cartBubble.textContent = cart.length;
 };
 const init = () => {
   renderProducts();
   cartLabel.addEventListener("click", toggleCart); //toggle carrito
   document.addEventListener("DOMContentLoaded", renderCarrito); //carrito
-  BtnProductsAgregar.addEventListener("click", agregarCarrito);
+  productsContainer.addEventListener("click", agregarCarrito);
+  cartShoppingContainer.addEventListener("click", handleQuantity);
+  renderCartBubble();
 };
 init();
