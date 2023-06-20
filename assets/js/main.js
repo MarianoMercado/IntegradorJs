@@ -1,6 +1,7 @@
 const productsContainer = document.querySelector(".products-container");
 const btnTodos = document.querySelectorAll(".btn-Todos");
 const btnCategories = document.querySelectorAll(".btn-categories");
+const btnCategoriesFilter = document.querySelectorAll(".btn-categories button");
 const cartLabel = document.querySelector(".cart-label");
 const cartShopping = document.querySelector(".cart-shopping");
 const cartShoppingContainer = document.querySelector(
@@ -49,7 +50,7 @@ const createProductsCards = (product) => {
                 data-name="${name}" 
                 data-Precio="${Precio}"
                  data-cardImg="${cardImg}">Agregar</button>
-                <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                
               </div>
             </div>
           </div>
@@ -62,44 +63,48 @@ const renderProducts = () => {
   productsContainer.innerHTML = productsData.map(createProductsCards).join("");
 };
 
-//filtrar products
-btnCategories.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    // Obtener la categoría seleccionada
-    const category = event.target.dataset.categorymarca;
+const filterProducts = () => {
+  debugger;
+  //filtrar products
+  btnCategories.forEach((button) => {
+    button.addEventListener("click", (event) => {
+      // Obtener la categoría seleccionada
+      const category = event.target.dataset.categorymarca;
 
-    if (category === "Todos") {
-      renderProducts();
-      return;
-    } else {
-      // Filtrar el array según la categoría seleccionada
-      const filteredArray = productsData.filter(
-        (product) => product.Marca === category
-      );
+      if (category === "Todos") {
+        renderProducts();
+        return;
+      } else {
+        // Filtrar el array según la categoría seleccionada
+        const filteredArray = productsData.filter(
+          (product) => product.Marca === category
+        );
 
-      // Renderizar las tarjetas filtradas en el contenedor
-      productsContainer.innerHTML = filteredArray
-        .map(createProductsCards)
-        .join("");
-    }
-    // const categoryActive = event.target;
-    // categoryActive.classList.remove("Active-btn-categories");
-    // categoryActive.classList.add("Active-btn-categories");
+        // Renderizar las tarjetas filtradas en el contenedor
+        productsContainer.innerHTML = filteredArray
+          .map(createProductsCards)
+          .join("");
+      }
+      btnFilter();
+    });
   });
-});
+};
 
 // Activar el botón seleccionado y desactivar los demás
-btnCategories.forEach((button) => {
-  button.addEventListener("click", (event) => {
-    // Desactivar todos los botones
-    btnCategories.forEach((btn) =>
-      btn.classList.remove("Active-btn-categories")
-    );
+const btnFilter = () => {
+  debugger;
 
-    // Activar el botón en el que se ha hecho clic
-    event.target.classList.add("Active-btn-categories");
+  btnCategories.forEach((button) => {
+    button.addEventListener("click", () => {
+      // Eliminar la clase 'active' de todos los botones
+      btnCategories.forEach((btn) =>
+        btn.classList.remove("Active-btn-categories ")
+      );
+      // Agregar la clase 'active' al botón clickeado
+      button.classList.add("Active-btn-categories ");
+    });
   });
-});
+};
 
 const createCartProductTemplate = (cartProduct) => {
   const { id, name, precio, cardimg, cantidad, marca } = cartProduct;
@@ -267,6 +272,8 @@ const updateCartState = () => {
   renderCartBubble();
   renderCartFooter();
   showCartTotal();
+  // btnFilter();
+  // filterProducts();
 };
 
 //burbuja carrito
@@ -341,6 +348,8 @@ const init = () => {
   renderProducts();
   cartLabel.addEventListener("click", toggleCart); //toggle carrito
   document.addEventListener("DOMContentLoaded", renderCarrito); //carrito
+  document.addEventListener("DOMContentLoaded", filterProducts);
+  // document.addEventListener("DOMContentLoaded", btnFilter);
   productsContainer.addEventListener("click", agregarCarrito);
   cartShoppingContainer.addEventListener("click", handleQuantity);
   renderCartBubble();

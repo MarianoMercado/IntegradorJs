@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Domine:wght@400;600;700&family=Kdam+Thmor+Pro&family=Montserrat:ital,wght@1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -11,6 +12,7 @@
   --back: #000000;
   --bg-black: rgba(7, 6, 6, 0.8);
   --white: #ffffff;
+  --white-ligth: #fbfbfb77;
   --mist: #90afc5;
   --stone: #336b87;
   --shadow: #2a3132;
@@ -206,16 +208,7 @@
   color: var(--white);
   font-weight: 800;
   /* background-color: var(--white); */
-  border: 1px solid var(--autumn-foliage);
-}
-
-.down:hover,
-.up:hover {
-  font-size: 16px;
-  font-weight: 800;
-  box-shadow: var(--mist) 0 0 15px;
-  background-color: var(--mist);
-  color: var(--bg-black);
+  border: 1px solid var(--back);
 }
 
 /* footer carrito */
@@ -249,7 +242,40 @@
   font-size: 16px;
   font-weight: 800;
 }
+/* active */
+.down,
+.up {
+  /* Agrega una transición suave al presionar el botón */
+  transition: all 0.1s ease-in-out;
+}
+.down:active {
+  transform: translateY(5px);
+  /* Elimina la sombra para dar la impresión de que el botón está hundido */
+}
+.up:active {
+  transform: translateY(-5px);
+  /* Elimina la sombra para dar la impresión de que el botón está hundido */
+}
+/* hover carrito */
 
+.down:hover {
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: var(--mist) 0 0 15px;
+  background-color: var(--msj-error);
+
+  border: 1px solid var(--msj-error);
+  cursor: pointer;
+}
+
+.up:hover {
+  font-size: 16px;
+  font-weight: 800;
+  box-shadow: var(--mist) 0 0 15px;
+  background-color: var(--msj-succes);
+  cursor: pointer;
+  border: 1px solid var(--msj-succes);
+}
 .cart-footer-add:hover {
   background-color: var(--msj-succes);
   color: white;
@@ -261,12 +287,10 @@
   box-shadow: var(--white) 0 0 15px;
 }
 
-/* hover carrito */
 .cart-icon:hover {
   /* color: var(--stone); */
   border-bottom: 1px solid var(--shadow);
   /* box-shadow: var(--white) 0 0 15px; */
-
   transition: 0.5s ease-in;
   transform: scale(1.3);
 }
@@ -289,7 +313,7 @@ main {
 
 #hero {
   /* imagen de fondo */
-  background-image: url(/assets/imagenes/Bg-portada\ 2.jpg);
+  background-image: url(/assets/imagenes/Bg-hero.jpg);
   /* filter: brightness(50%); */
   height: 100vh;
   width: 100%;
@@ -345,7 +369,7 @@ main {
   padding: 50px 30px;
   gap: 20px;
   font-family: "Kdam Thmor Pro", sans-serif;
-  background-image: url(/assets/imagenes/Bg-portada.jpg);
+  background-image: url(/assets/imagenes/Bg-\ about.jpg);
   background-attachment: fixed;
   width: 100%;
   background-size: cover;
@@ -512,22 +536,22 @@ main {
   width: 100%;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
 }
-.card-products-carrito i {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: none;
-  background: none;
-  width: 100%;
-}
+
 .card-products-carrito:hover {
   border: 1px solid var(--stone);
   /* background: linear-gradient(to top, var(--mist), var(--white)); */
   background: transparent;
   /* color: var(--white); */
 }
-
+.card-products-agregar:active {
+  /* color: blue;  font-size: 10px;
+  Agrega una sombra al texto */
+  text-shadow: 1px 1px 2px black;
+  transform: translateY(-5px);
+}
 /**************************************** <!-- contact --> */
 
 #contact {
@@ -535,7 +559,7 @@ main {
   justify-content: center;
   align-items: center;
   color: var(--white);
-  background-image: url(/assets/imagenes/pexels-cottonbro-studio-5082579.jpg);
+  background-image: url(/assets/imagenes/bg\ -\ contact.jpg);
   font-family: "Kdam Thmor Pro", sans-serif;
   width: 100%;
   padding: 30px;
@@ -563,6 +587,10 @@ main {
   align-items: center;
   width: 80%;
 }
+.contact-container-inputs input {
+  padding: 5px;
+  border-radius: 5px;
+}
 .contact-container-txt-btn {
   display: flex;
   flex-direction: column;
@@ -571,10 +599,25 @@ main {
   gap: 20px;
   width: 80%;
 }
+.contact-container-txt-btn button {
+  border-radius: 5px;
+  border: none;
+  font-family: "Kdam Thmor Pro", sans-serif;
+
+  border: none;
+  padding: 5px 10px;
+  color: var(--bg-black);
+  border-radius: 10px;
+  cursor: pointer;
+}
 .textarea {
   width: 100%;
+  border-radius: 5px;
 }
-
+.contact-container-txt-btn button:hover {
+  background: var(--mist);
+  box-shadow: var(--mist) 0 0 5px;
+}
 /**************************************  <!-- footer --> */
 #footer {
   display: flex;
@@ -582,12 +625,72 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 10px;
+  padding: 10px;
   background: var(--back);
   color: var(--white);
 }
-.footer-info img {
-  height: 50%;
+.footer-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  gap: 10px;
+  border-bottom: 1px solid var(--white);
+  width: 100%;
+}
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.footer-links-title {
+  font-size: 16px;
+  font-family: "Kdam Thmor Pro", sans-serif;
+}
+.footer-links li {
+  font-family: "Domine", serif;
+  display: flex;
+  gap: 10px;
+  font-size: 10px;
+}
+
+/* hover link */
+.footer-links li::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  height: 2px;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.3s;
+  background-color: var(--white);
+}
+.footer-links li:hover::after {
+  transform: scaleX(1);
+}
+.footer-links li:hover {
+  transform: scaleX(1);
+  cursor: pointer;
+}
+.Footer-info-dev {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5px 0;
+}
+.name {
+  font-family: "Tangerine", cursive;
+  font-weight: 900;
+  font-size: 2rem;
+}
+.des {
+  color: var(--white-ligth);
+  font-size: 0.9rem;
 }
 
 /***************************************** page login */
@@ -607,7 +710,7 @@ main {
 }
 
 #SectionLogin {
-  background-image: url(/assets/imagenes/carretera.jpg);
+  background-image: url(/assets/imagenes/bg\ -\ login.jpg);
   /* filter: brightness(50%); */
   height: 100vh;
   width: 100%;
@@ -709,7 +812,7 @@ main {
   border-radius: 5px;
   font-size: 14px;
   transition: 0.3s;
-  color: var(--gray);
+  color: var(--white);
 }
 .Active-btn-categories {
   background: var(--stone);
