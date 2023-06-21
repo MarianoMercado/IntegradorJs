@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- animaciones -->
+    <link rel="stylesheet" href="/assets/css/animaciones.css" />
+    <!-- icon -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- header -->
+    <header class="headerLogin">
+      <a href="/index.html">
+        <img
+          src="/assets/imagenes/LogoAtuos-white.png"
+          class="logo"
+          alt="logo"
+        />
+      </a>
+      <nav class="navbar">
+        <label for="toggle-menu"><i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="toggle-menu" />
+
+        <ul class="navbarlist">
+          <li>
+            <a href="/index.html " class="navbar-link">Inicio</a>
+          </li>
+          <li>
+            <a href="/assets/pages/login.html" class="navbar-link"
+              >Inicio Sesión</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- main -->
+    <main>
+      <section id="SectionRegister">
+        <div class="RegisterContainer">
+          <div class="Register">
+            <div class="Register-header">
+              <h3>Ingrese sus datos</h3>
+              <p>Y recibe ofertas exclusivas!</p>
+            </div>
+
+            <div class="Register-body">
+              <form>
+                <div class="form-container">
+                  <!-- nombre -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-user"></i>
+                    <input class="input-text" placeholder="Ingrese su Nombre" />
+                  </div>
+                  <!-- apellido -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-user"></i>
+                    <input
+                      class="input-text"
+                      placeholder="Ingrese su Apellido"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-container">
+                  <!-- dni -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                    <input
+                      class="input-text"
+                      type="number"
+                      placeholder="Ingrese su Dni"
+                    />
+                  </div>
+                  <!-- correo -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-envelope"></i>
+                    <input
+                      class="input-text"
+                      type="email"
+                      placeholder="Ingrese su Correo"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-container">
+                  <!-- contraseña -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-lock"></i>
+                    <input
+                      class="input-text"
+                      type="password"
+                      placeholder="Ingrese su Contraseña"
+                    />
+                  </div>
+                  <!-- contraseña validacion -->
+                  <div class="input-container">
+                    <i class="fa-solid fa-unlock"></i>
+                    <input
+                      class="input-text"
+                      type="password"
+                      placeholder="Reingrese su Contraseña"
+                    />
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="Register-footer">
+              <input
+                class="Register-btnIngresar"
+                type="submit"
+                value="Ingresar"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

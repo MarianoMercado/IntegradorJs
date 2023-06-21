@@ -7,6 +7,8 @@
     <title>Login</title>
     <!-- css -->
     <link rel="stylesheet" href="/assets/css/style.css" />
+    <!-- animaciones -->
+    <link rel="stylesheet" href="/assets/css/animaciones.css" />
     <!-- icon -->
     <link
       rel="stylesheet"
@@ -31,44 +33,48 @@
           <li>
             <a href="/index.html " class="navbar-link">Inicio</a>
           </li>
-          <li><a href="#about" class="navbar-link">Registrate</a></li>
+          <li>
+            <a href="/assets/pages/register.html" class="navbar-link"
+              >Registrate</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
+
     <!-- main -->
     <main>
       <section id="SectionLogin">
         <div class="loginContainer">
           <div class="login">
             <div class="login-header">
-              <img
-                src="/assets/imagenes/LogoAtuos-white.png"
-                class="logo"
-                alt="logo"
-              />
+              <h2>RAMEN AUTOS</h2>
             </div>
 
             <div class="login-body">
               <form>
-                <div class="login-dni">
+                <!-- usuario -->
+                <div class="input-container">
                   <i class="fa-solid fa-user"></i>
-                  <label for="dni">Usuario </label>
-                  <input type="tex" id="dni" placeholder="Usuario" />
+                  <input class="input-text" placeholder="Ingrese su Usuario" />
                 </div>
-                <div class="login-passw">
+
+                <!-- contrseña -->
+                <div class="input-container">
                   <i class="fa-sharp fa-solid fa-user-lock"></i>
-                  <label for="password">Contraseña</label>
                   <input
-                    type="password"
-                    id="password"
-                    placeholder="Contraseña"
+                    class="input-text"
+                    placeholder="Ingrese su Contraseña"
                   />
                 </div>
               </form>
             </div>
             <div class="login-footer">
-              <a href="#">Ingresar</a>
-              <a href="./Contact.html">No tienes Cuenta?</a>
+              <input class="login-btnIngresar" type="submit" value="Ingresar" />
+
+              <a class="login-btnRegistrarse" href="/assets/pages/register.html"
+                >¿No tienes Cuenta?</a
+              >
             </div>
           </div>
         </div>

@@ -2,3 +2,100 @@ html {
   scroll-behavior: smooth;
   scroll-padding-top: 65px;
 }
+
+/************************************
+            keyframes
+            
+****************************/
+/* pasa de opacidad 0 a opacidad 1 */
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* efecto hacia arriba */
+@keyframes slide-up {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* efecto hacia la derecha */
+@keyframes scale-up-hor-right {
+  0% {
+    -webkit-transform: scaleX(0.4);
+    transform: scaleX(0.4);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+  100% {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+    -webkit-transform-origin: 100% 100%;
+    transform-origin: 100% 100%;
+  }
+}
+
+@keyframes scale-up-ver-center {
+  0% {
+    -webkit-transform: scaleY(0.4);
+    transform: scaleY(0.4);
+  }
+  100% {
+    -webkit-transform: scaleY(1);
+    transform: scaleY(1);
+  }
+}
+
+/* animacion rotacion */
+@keyframes Rotate-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.login-dni i,
+.login-passw i {
+  animation: Rotate-icon 2s ease;
+}
+/************************************
+            aplicacion
+            
+****************************/
+
+/* hero */
+.hero-info h1 {
+  animation: fade 2s ease-in;
+}
+.hero-btns {
+  animation: fade 2s ease-in, slide-up 1.3s ease-in-out;
+}
+
+/* <!-- products --> */
+
+.card-products {
+  animation: fade 2s ease-in, scale-up-hor-right 1.3s ease-in-out;
+}
+/* <!-- login--> */
+.loginContainer {
+  animation: scale-up-ver-center 0.5s ease-in-out;
+}
+.login-header h2 {
+  animation: fade 2s ease-in;
+}
+.input-container {
+  animation: fade 2.5s ease-in;
+}
+.linput-container i,
+.input-container i {
+  animation: Rotate-icon 2s ease;
+}

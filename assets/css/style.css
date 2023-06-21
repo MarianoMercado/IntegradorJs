@@ -13,6 +13,7 @@
   --bg-black: rgba(7, 6, 6, 0.8);
   --white: #ffffff;
   --white-ligth: #fbfbfb77;
+  --marron: #3b3b3b;
   --mist: #90afc5;
   --stone: #336b87;
   --shadow: #2a3132;
@@ -21,7 +22,8 @@
   --msj-warning: rgba(233, 207, 10, 0.8);
   --msj-error: rgba(237, 9, 9, 0.8);
 }
-.header {
+.header,
+.headerLogin {
   height: 80px;
   position: fixed;
   top: 0;
@@ -47,6 +49,7 @@
   list-style: none;
   display: flex;
   gap: 80px;
+  font-family: "Montserrat", sans-serif;
 }
 .navbar {
   display: flex;
@@ -63,7 +66,7 @@
   color: var(--shadow);
   position: relative;
   font-size: 1em;
-  font-weight: 500;
+  font-weight: 800;
   cursor: pointer;
   line-height: 30px;
 }
@@ -572,6 +575,7 @@ main {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  text-align: center;
   gap: 10px;
   width: 400px;
   height: 400px;
@@ -693,8 +697,11 @@ main {
   font-size: 0.9rem;
 }
 
-/***************************************** page login */
-.headerLogin {
+/***********************************************
+ page login
+
+ ********************************************** */
+/* .headerLogin {
   height: 80px;
   position: fixed;
   top: 0;
@@ -703,12 +710,11 @@ main {
   align-items: center;
   padding: 0px 50px;
   color: var(--shadow);
-  background: transparent;
+  background: transparent;asd
   position: fixed;
   width: 100%;
   z-index: 99;
-}
-
+} */
 #SectionLogin {
   background-image: url(/assets/imagenes/bg\ -\ login.jpg);
   /* filter: brightness(50%); */
@@ -730,30 +736,23 @@ main {
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  margin-top: 90px;
   max-width: 1500px;
   background: var(--bg-black);
-  padding: 10px 30px;
+  padding: 10px;
   border-radius: 10px;
   box-shadow: 0 25px 25px var(--bg-black);
-  color: var(--white);
 }
-.contact-container-inputs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 80%;
-}
+
 .login {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   background: transparent;
-  font-family: "Cinzel", serif;
-  gap: 30px;
-  height: 100%;
+  font-family: "Domine", serif;
+  gap: 10px;
 }
 .login-header {
   display: flex;
@@ -761,16 +760,66 @@ main {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 20px;
+  padding: 15px 10px;
 }
-.login-header img {
-  height: 100px;
+.login-header h2 {
+  color: var(--white);
+  text-align: center;
+  border-bottom: 1px solid var(--white);
 }
 .login-body form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.input-text {
+  display: flex;
+  color: var(--back);
+  background-color: var(--white);
+  outline: none;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 0px 8px 8px 0px;
+  width: 200px;
+}
+
+.input-text::placeholder {
+  color: var(--marron);
+  font-size: 0.6rem;
+}
+
+.input-container i {
+  height: 100%;
+  background-color: var(--marron);
+  color: var(--white);
+  border-radius: 8px 0px 0px 8px;
+  padding: 0.5rem;
+}
+.login-btnIngresar {
+  border-radius: 5px;
+  border: none;
+  font-family: "Kdam Thmor Pro", sans-serif;
+  border: none;
+  padding: 5px 10px;
+  color: var(--bg-black);
+  border-radius: 10px;
+  cursor: pointer;
+}
+.login-btnIngresar:hover {
+  border-color: 1px solid var(--sky-blue);
+  background-color: transparent;
+
+  color: var(--white);
+  box-shadow: var(--white) 0 0 5px;
 }
 .login-footer {
   display: flex;
@@ -794,25 +843,81 @@ main {
   color: var(--bg-black);
   box-shadow: var(--gray) 0 0 5px;
 }
+/***********************************************
+ page register
 
-.login-dni,
-.login-passw {
+ ********************************************** */
+#SectionRegister {
+  background-image: url(/assets/imagenes/paisaje.jpg);
+  /* filter: brightness(50%); */
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: "Domine", serif;
+  gap: 10px;
+  color: var(--white);
+}
+.RegisterContainer {
+  display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: 90px;
+  max-width: 1500px;
+  background: var(--bg-black);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 25px 25px var(--bg-black);
+}
+.Register {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: transparent;
+  font-family: "Domine", serif;
   gap: 10px;
 }
-.login-dni input,
-.login-passw input {
-  padding: 5px;
-  border: 2px solid var(--sky-blue);
-  background: rgb(0, 0, 0, 0);
-  outline: none;
-  border-radius: 5px;
-  font-size: 14px;
-  transition: 0.3s;
+.Register-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 15px 10px;
+  gap: 10px;
+}
+.Register-header h2 {
   color: var(--white);
+  text-align: center;
+  border-bottom: 1px solid var(--white);
+}
+.Register-header p {
+  color: var(--white-ligth);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 900;
+}
+.Register-body form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+.form-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
 .Active-btn-categories {
   background: var(--stone);
