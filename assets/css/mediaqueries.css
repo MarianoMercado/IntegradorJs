@@ -1,25 +1,118 @@
-@media (max-width: 700px) {
-  header {
-    padding: 15px;
+/*
+Móvil pequeño: 360 x 640 px
+Móvil medio: 375 x 667 px
+Smartphone grande: 720 x 1280 px
+Ordenador portátil medio: 1366 x 768 px
+Ordenador de escritorio medio: 1440 x 900 px
+PC de escritorio grande: 1920 x 1080 px 12.
+
+*/
+@media (max-width: 800px) {
+  /*Toggle del navbar*/
+
+  .header,
+  .headerLogin {
+    padding: 0px 10px;
   }
-  .navbar ul {
+  .navbar {
+    gap: 10px;
+  }
+  .navbarlist {
     width: 100%;
-    height: calc(100vh - 80px);
+    height: calc(100vh - 100px);
+    width: 50%;
     position: absolute;
     top: 80px;
     left: 0;
     flex-direction: column;
-    display: none;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(to bottom, var(--mist), var(--stone));
+    z-index: 999;
+    border-radius: 10px;
+    border: 1px solid var(--white-ligth);
+    display: none;
+  }
+  .navbarlistLogin {
+    width: 100%;
+    height: 100px;
+    width: 50%;
+    position: absolute;
+    top: 80px;
+    left: 0;
+
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom, var(--mist), var(--stone));
+    z-index: 999;
+    border-radius: 10px;
+    border: 1px solid var(--white-ligth);
+    display: none;
   }
   .toggle-menu {
     display: flex;
   }
-  #toggle-menu:checked ~ .navbarlist {
+
+  .open-Navbar {
     display: flex;
   }
-  .contact-img {
+  #toggle-menu:checked ~ .navbarlistLogin {
+    display: block;
+  }
+}
+
+/* Móvil medio: 375 x 667 px */
+@media (max-width: 375px) {
+  .hero-info h1 {
+    font-size: 1.9rem;
+  }
+  .hero-btns {
+    flex-direction: column;
+  }
+}
+
+/* Móvil pequeño: 360 x 640 px */
+@media (max-width: 360px) {
+  /* section header */
+
+  /* products */
+  #products {
+    padding: 30px 10px;
+  }
+
+  .hero-info {
+    justify-content: end;
+    /* margin-top: 90px; */
+  }
+
+  /* section contact */
+  #contact {
+    padding: 10px;
+  }
+  .contact-container {
+    justify-content: center;
+    gap: 20px;
+  }
+  .contact-container-inputs {
+    justify-content: center;
+  }
+  .contact-container-inputs label {
     display: none;
+  }
+  .contact-container-txt-btn {
+    width: 100%;
+  }
+  /* footer */
+  .footer-info {
+    flex-direction: column;
+    gap: 13px;
+  }
+  .footer-links-title {
+    font-size: 21px;
+  }
+  .footer-links li {
+    font-size: 13px;
+  }
+  .loginContainer {
   }
 }
