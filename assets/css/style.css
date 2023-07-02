@@ -138,7 +138,7 @@
   text-align: center;
   text-align: center;
   gap: 20px;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 100px);
   overflow-y: scroll;
   box-shadow: var(--mist) 0 0 15px;
   transform: translate(200%);
@@ -584,7 +584,7 @@ main {
   text-align: center;
   gap: 10px;
   width: 400px;
-  height: 400px;
+  /* height: 400px; */
   max-width: 1500px;
   background: var(--bg-black);
   padding: 10px 30px;
@@ -593,6 +593,7 @@ main {
 }
 .contact-container-inputs {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 80%;
@@ -603,13 +604,14 @@ main {
 }
 .contact-container-txt-btn {
   display: flex;
-  flex-direction: column;
+
   justify-content: center;
   align-items: center;
-  gap: 20px;
+
   width: 80%;
 }
-.contact-container-txt-btn button {
+
+.btnContact-Enviar {
   border-radius: 5px;
   border: none;
   font-family: "Kdam Thmor Pro", sans-serif;
@@ -809,7 +811,8 @@ main {
   border-radius: 8px 0px 0px 8px;
   padding: 0.5rem;
 }
-.login-btnIngresar {
+.login-btnIngresar,
+.Register-btnIngresar {
   border-radius: 5px;
   border: none;
   font-family: "Kdam Thmor Pro", sans-serif;
@@ -819,11 +822,12 @@ main {
   border-radius: 10px;
   cursor: pointer;
 }
-.login-btnIngresar:hover {
+.login-btnIngresar:hover,
+.Register-btnIngresar:hover {
   border-color: 1px solid var(--sky-blue);
-  background-color: transparent;
-
-  color: var(--white);
+  /* background-color: transparent; */
+  background: linear-gradient(to bottom, var(--mist), var(--stone));
+  /* color: var(--white); */
   box-shadow: var(--white) 0 0 5px;
 }
 .login-footer {
@@ -836,6 +840,7 @@ main {
 .login-footer a {
   list-style: none;
   text-decoration: none;
+  text-align: center;
   color: var(--white);
   font-size: 16px;
   padding: 5px;
@@ -967,9 +972,35 @@ main {
   border-radius: 20px 10px;
   transform: translateY(200%);
 }
+
+/*validaciones msj*/
+.Smallmsj {
+  font-size: 10px;
+  font-weight: 400;
+}
+.MsjError {
+  color: var(--msj-error);
+}
+.MsjSuccess {
+  color: var(--msj-succes);
+}
+.inputValidarError {
+  border: 1px solid var(--msj-error);
+}
+.inputValidarSucces {
+  border: 1px solid var(--msj-succes);
+}
+#name:focus,
+#lastName:focus,
+#email:focus,
+#textarea:focus {
+  outline: none;
+}
+/*validaciones modal*/
 .error {
   background-color: var(--msj-error);
 }
+
 .success {
   background-color: var(--msj-succes);
 }

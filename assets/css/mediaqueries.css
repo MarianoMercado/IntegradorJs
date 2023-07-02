@@ -1,11 +1,11 @@
 /*
+mínimo de 320px. 
 Móvil pequeño: 360 x 640 px
 Móvil medio: 375 x 667 px
 Smartphone grande: 720 x 1280 px
 Ordenador portátil medio: 1366 x 768 px
 Ordenador de escritorio medio: 1440 x 900 px
 PC de escritorio grande: 1920 x 1080 px 12.
-
 */
 @media (max-width: 800px) {
   /*Toggle del navbar*/
@@ -61,30 +61,13 @@ PC de escritorio grande: 1920 x 1080 px 12.
   }
 }
 
-/* Móvil medio: 375 x 667 px */
-@media (max-width: 375px) {
+@media (max-width: 500px) {
   .hero-info h1 {
     font-size: 1.9rem;
   }
   .hero-btns {
     flex-direction: column;
   }
-}
-
-/* Móvil pequeño: 360 x 640 px */
-@media (max-width: 360px) {
-  /* section header */
-
-  /* products */
-  #products {
-    padding: 30px 10px;
-  }
-
-  .hero-info {
-    justify-content: end;
-    /* margin-top: 90px; */
-  }
-
   /* section contact */
   #contact {
     padding: 10px;
@@ -99,9 +82,34 @@ PC de escritorio grande: 1920 x 1080 px 12.
   .contact-container-inputs label {
     display: none;
   }
-  .contact-container-txt-btn {
+  /* .contact-container-txt-btn {
     width: 100%;
+  } */
+
+  /* page register */
+  .RegisterContainer {
+    width: 80%;
   }
+
+  .form-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  /* section header */
+
+  /* products */
+  #products {
+    padding: 30px 10px;
+  }
+
+  .hero-info {
+    justify-content: end;
+    /* margin-top: 90px; */
+  }
+
   /* footer */
   .footer-info {
     flex-direction: column;
@@ -113,6 +121,16 @@ PC de escritorio grande: 1920 x 1080 px 12.
   .footer-links li {
     font-size: 13px;
   }
-  .loginContainer {
+
+  /* page login */
+  .login-header {
+    padding: 15px 5px;
+  }
+  .login-header h2 {
+    font-size: 20px;
+  }
+  .loginContainer,
+  .input-text {
+    width: 90%;
   }
 }

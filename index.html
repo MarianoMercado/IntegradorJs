@@ -193,34 +193,51 @@
 
       <!-- contact -->
       <section id="contact">
-        <div class="contact-container">
+        <form class="contact-container" novalidate>
           <h3>¡Consulte la mejor Financiación!</h3>
+          <!-- nombre -->
           <div class="contact-container-inputs">
             <label for="name">Nombre</label>
             <input placeholder="Ingrese su Nombre" type="text" id="name" />
+            <small class="Smallmsj"></small>
           </div>
+
+          <!-- apellido -->
           <div class="contact-container-inputs">
             <label for="apeliido">Apellido</label>
             <input
               placeholder="Ingrese su Apellido"
               type="text"
-              id="apeliido"
+              id="lastName"
             />
+             <small class="Smallmsj"></small>
           </div>
+
+          <!-- correo -->
           <div class="contact-container-inputs">
             <label for="email">Correo</label>
             <input placeholder="Ingrese su Correo" type="text" id="email" />
+             <small class="Smallmsj"></small>
           </div>
-          <div class="contact-container-txt-btn">
-            <textarea
+
+          <!-- textarea -->
+            <div class="contact-container-inputs">
+              <label for="textarea">Consulta</label>
+              <textarea
+            id="textarea"
               class="textarea"
               rows="5"
               cols="40"
               placeholder="Escriba su consulta y un asesor se contactara con usted a la brevedad."
             ></textarea>
-            <button>Enviar Consulta</button>
+             <small class="Smallmsj"></small>
+            </div>
+            <div class="contact-container-txt-btn">
+            
+             <input type="submit" class="btnContact-Enviar" value="Registrarse" />
+            
           </div>
-        </div>
+        </form>
       </section>
     </main>
 
@@ -314,6 +331,7 @@
     <!-- scripts -->
     <script src="/assets/js/data.js"></script>
     <script src="/assets/js/main.js"></script>
+    <script src="/assets/js/validaciones.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
       AOS.init({
